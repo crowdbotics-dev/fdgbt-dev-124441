@@ -1,4 +1,5 @@
 from django.contrib.auth import get_user_model
+from home.models import Gahana, OQOO, Gahana, OQOO
 from django.http import HttpRequest
 from django.utils.translation import gettext_lazy as _
 from allauth.account import app_settings as allauth_settings
@@ -73,3 +74,15 @@ class PasswordSerializer(PasswordResetSerializer):
     """Custom serializer for rest_auth to solve reset password error"""
 
     password_reset_form_class = ResetPasswordForm
+
+
+class GahanaSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Gahana
+        fields = "__all__"
+
+
+class OQOOSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = OQOO
+        fields = "__all__"
